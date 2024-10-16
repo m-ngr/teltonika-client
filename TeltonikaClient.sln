@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeltonikaClient.Console", "TeltonikaClient.Console\TeltonikaClient.Console.csproj", "{B563CEB6-436A-44A2-92AD-911D02DFC831}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeltonikaClient.Console", "TeltonikaClient.Console\TeltonikaClient.Console.csproj", "{B563CEB6-436A-44A2-92AD-911D02DFC831}"
+	ProjectSection(ProjectDependencies) = postProject
+		{961CD829-042B-4450-B944-7C31410E8ED8} = {961CD829-042B-4450-B944-7C31410E8ED8}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeltonikaClient.Core", "TeltonikaClient.Core\TeltonikaClient.Core.csproj", "{961CD829-042B-4450-B944-7C31410E8ED8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeltonikaClient.Core", "TeltonikaClient.Core\TeltonikaClient.Core.csproj", "{961CD829-042B-4450-B944-7C31410E8ED8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeltonikaClient.UI", "TeltonikaClient.UI\TeltonikaClient.UI.csproj", "{5F01C75D-194E-4847-948C-AE37A58999D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeltonikaClient.UI", "TeltonikaClient.UI\TeltonikaClient.UI.csproj", "{5F01C75D-194E-4847-948C-AE37A58999D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{961CD829-042B-4450-B944-7C31410E8ED8} = {961CD829-042B-4450-B944-7C31410E8ED8}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9F681B6A-8620-4694-A5F3-B0787F5E888D}"
 	ProjectSection(SolutionItems) = preProject
