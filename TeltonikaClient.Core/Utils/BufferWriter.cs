@@ -10,6 +10,11 @@ namespace TeltonikaClient.Core.Utils {
       _stream = new MemoryStream(capacity);
       _bigEndian = bigEndian;
     }
+    public BufferWriter(MemoryStream stream, bool bigEndian = true) {
+      _stream = stream;
+      _bigEndian = bigEndian;
+    }
+
     public void Dispose() {
       _stream?.Dispose();
       GC.SuppressFinalize(this);

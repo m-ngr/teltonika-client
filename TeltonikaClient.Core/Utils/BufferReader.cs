@@ -1,4 +1,5 @@
 ﻿using System.Buffers.Binary;
+using System.Numerics;
 using System.Text;
 
 namespace TeltonikaClient.Core.Utils {
@@ -7,6 +8,10 @@ namespace TeltonikaClient.Core.Utils {
     private readonly bool _bigEndian;
     public BufferReader(byte[] buffer, bool bigEndian = true) {
       _stream = new MemoryStream(buffer);
+      _bigEndian = bigEndian;
+    }
+    public BufferReader(MemoryStream stream, bool bigEndian = true) {
+      _stream = stream;
       _bigEndian = bigEndian;
     }
     public void Dispose() {
@@ -92,6 +97,15 @@ namespace TeltonikaClient.Core.Utils {
       return encoding.GetString(ReadBytes(length));
     }
     #endregion
+    public BigInteger ReadInt(int size, bool signed) {
+      return size switch {
+        1 => signed ? (BigInteger)ReadInt8() : (BigInteger)ReadUInt8(),
+        2 => signed ? (BigInteger)ReadInt16() : (BigInteger)ReadUInt16(),
+        4 => signed ? (BigInteger)ReadInt32() : (BigInteger)ReadUInt32(),
+        8 => signed ? (BigInteger)ReadInt64() : (BigInteger)ReadUInt64(),
+        _ => throw new ArgumentException("Unsupported size."),
+      };
+    }
 
     public long Length => _stream.Length;
     public long Available => Length - _stream.Position;

@@ -1,7 +1,6 @@
 ﻿using TeltonikaClient.Core.Utils;
 
 namespace TeltonikaClient.Core.Codecs {
-
   public static class Codec12 {
     public static bool CanDecode(byte[] buffer) {
       if(buffer.Length < 8) return false;

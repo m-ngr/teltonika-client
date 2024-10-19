@@ -2,10 +2,10 @@
 
 ## Todo
 - [x] Implement Codec12 (Encoder/Decoder)
-- [ ] Implement Codec8 Encoder
-- [ ] Implement Teltonika Codec
-- [ ] Implement CRC16
-- [ ] Implement Teltonika Stream (Send/Receive)
-- [ ] Implement Teltonika Client
+- [x] Implement Codec8 Encoder
+- [x] Implement Teltonika Codec
+- [x] Implement CRC16
+- [x] Implement Teltonika Stream (Send/Receive)
+- [x] Implement Teltonika Client
 - [ ] Implement Teltonika Console
-- [ ] Implement Teltonika UI
+- [x] Implement Teltonika UI
