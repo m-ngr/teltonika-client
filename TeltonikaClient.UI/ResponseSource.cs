@@ -7,7 +7,7 @@ namespace TeltonikaClient.UI {
   }
 
   internal class ResponseSource {
-    private static readonly JsonSerializerOptions JsonOptions = new() { WriteIndented = true };
+    private static readonly JsonSerializerOptions _jsonOptions = new() { WriteIndented = true };
     private readonly string _filePath;
     public BindingSource BindingSource { get; private set; }
 
@@ -21,7 +21,7 @@ namespace TeltonikaClient.UI {
     public void Save() {
       var list = BindingSource.List as List<CommandResponse>;
       if(list != null) {
-        string json = JsonSerializer.Serialize(list, JsonOptions);
+        string json = JsonSerializer.Serialize(list, _jsonOptions);
         File.WriteAllText(_filePath, json);
       }
     }

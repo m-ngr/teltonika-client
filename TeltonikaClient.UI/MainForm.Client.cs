@@ -2,16 +2,16 @@
 
 namespace TeltonikaClient.UI {
   public partial class MainForm {
-    TeltonikaSocket Client = new();
+    private TeltonikaSocket _client = new();
     private TeltonikaSocket CreateClient() {
-      Client = new TeltonikaSocket();
-      Client.OnConnect += OnConnect;
-      Client.OnClose += OnClose;
-      Client.OnAccept += OnAccept;
-      Client.OnRefuse += OnRefuse;
-      Client.OnError += OnError;
-      Client.OnCommand += OnCommand;
-      return Client;
+      _client = new TeltonikaSocket();
+      _client.OnConnect += OnConnect;
+      _client.OnClose += OnClose;
+      _client.OnAccept += OnAccept;
+      _client.OnRefuse += OnRefuse;
+      _client.OnError += OnError;
+      _client.OnCommand += OnCommand;
+      return _client;
     }
 
     private void SetStatus(bool connected, string status) {
@@ -27,27 +27,27 @@ namespace TeltonikaClient.UI {
 
     private void OnConnect(object? sender, string imei) {
       SetStatus(true, "Connected");
-      logger.Success($"Client Connected with IMEI {imei}");
+      _logger.Success($"Client Connected with IMEI {imei}");
     }
     private void OnClose(object? sender, string imei) {
       SetStatus(false, "Disconnected");
-      logger.Warn("Client Disconnected");
+      _logger.Warn("Client Disconnected");
     }
     private void OnAccept(object? sender, string imei) {
       SetStatus(true, "Accepted");
-      logger.Success($"Connection Accepted for IMEI {imei}");
+      _logger.Success($"Connection Accepted for IMEI {imei}");
     }
     private void OnRefuse(object? sender, string imei) {
       SetStatus(false, "Refused");
-      logger.Warn($"Connection Refused for IMEI {imei}");
+      _logger.Warn($"Connection Refused for IMEI {imei}");
     }
     private void OnError(object? sender, string error) {
-      logger.Error($"Error: {error}");
+      _logger.Error($"Error: {error}");
     }
     private void OnCommand(object? sender, string command) {
       var response = _responseSource.Get(command);
-      Client.SendResponse(response);
-      logger.Log($"Received Command: {command}, Sent Response: {response}.");
+      _client.SendResponse(response);
+      _logger.Log($"Received Command: {command}, Sent Response: {response}.");
       AddCommandEntry(command, response);
     }
     private void AddCommandEntry(string command, string response) {

@@ -2,7 +2,7 @@
 
 namespace TeltonikaClient.UI {
   public partial class MainForm : Form {
-    private readonly RTBLogger logger;
+    private readonly RTBLogger _logger;
     private string Imei { get => imeiBox.Text; }
     private string Host { get => hostBox.Text; }
     private int Port { get => (int)portBox.Value; }
@@ -30,19 +30,19 @@ namespace TeltonikaClient.UI {
 
     public MainForm() {
       InitializeComponent();
-      logger = new RTBLogger(logsBox);
+      _logger = new RTBLogger(logsBox);
       _responseSource = new ResponseSource("responses.json");
       _responseSource.Load();
       responseList.DataSource = _responseSource.BindingSource;
     }
 
     private void connectButton_Click(object sender, EventArgs e) {
-      Client = CreateClient();
-      _ = Client.Connect(Imei, Host, Port);
+      _client = CreateClient();
+      _ = _client.Connect(Imei, Host, Port);
     }
 
     private void closeButton_Click(object sender, EventArgs e) {
-      Client.Close();
+      _client.Close();
     }
 
     private void recordNow_CheckedChanged(object sender, EventArgs e) {
@@ -88,24 +88,24 @@ namespace TeltonikaClient.UI {
 
     private void recordSend_Click(object sender, EventArgs e) {
       var record = Record;
-      logger.Info("Sending Record");
-      logger.Info("===========================================", false);
-      logger.Log($" - Timestamp: {record.Timestamp}", false);
-      logger.Log($" - Satellites: {record.Satellites}", false);
-      logger.Log($" - Logitude: {record.Longitude}", false);
-      logger.Log($" - Latitude: {record.Latitude}", false);
-      logger.Log($" - Altitude: {record.Altitude}", false);
-      logger.Log($" - Angle: {record.Angle}", false);
-      logger.Log($" - Speed: {record.Speed}", false);
-      logger.Log($" - Odometer: {record.Odometer}", false);
-      logger.Log($" - Voltage: {record.ExternalVoltage}", false);
-      logger.Log($" - Battary: {record.Battary}", false);
-      logger.Log($" - Ignition: {record.Ignition}", false);
-      logger.Log($" - Movement: {record.Movement}", false);
-      logger.Log($" - Tow: {record.Tow}", false);
-      logger.Log($" - Idle: {record.Idle}", false);
-      logger.Info("===========================================", false);
-      Client.SendRecords([record]);
+      _logger.Info("Sending Record");
+      _logger.Info("===========================================", false);
+      _logger.Log($" - Timestamp: {record.Timestamp}", false);
+      _logger.Log($" - Satellites: {record.Satellites}", false);
+      _logger.Log($" - Logitude: {record.Longitude}", false);
+      _logger.Log($" - Latitude: {record.Latitude}", false);
+      _logger.Log($" - Altitude: {record.Altitude}", false);
+      _logger.Log($" - Angle: {record.Angle}", false);
+      _logger.Log($" - Speed: {record.Speed}", false);
+      _logger.Log($" - Odometer: {record.Odometer}", false);
+      _logger.Log($" - Voltage: {record.ExternalVoltage}", false);
+      _logger.Log($" - Battary: {record.Battary}", false);
+      _logger.Log($" - Ignition: {record.Ignition}", false);
+      _logger.Log($" - Movement: {record.Movement}", false);
+      _logger.Log($" - Tow: {record.Tow}", false);
+      _logger.Log($" - Idle: {record.Idle}", false);
+      _logger.Info("===========================================", false);
+      _client.SendRecords([record]);
     }
 
     private void commandBox_TextChanged(object sender, EventArgs e) {
