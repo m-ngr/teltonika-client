@@ -1,4 +1,6 @@
-﻿namespace TeltonikaClient.UI {
+﻿using System.Diagnostics;
+
+namespace TeltonikaClient.UI {
   internal static class FormUtils {
     public static void SetEqualColumnWidths(ListView list, int minWidth = 100) {
       // Get the total width of the ListView
@@ -55,6 +57,17 @@
     public static bool SetRandomBool(CheckBox component) {
       component.Checked = Random.Shared.Next(2) == 1;
       return component.Checked;
+    }
+
+    public static void OpenBrowser(string url) {
+      try {
+        Process.Start(new ProcessStartInfo {
+          FileName = url,
+          UseShellExecute = true
+        });
+      } catch(Exception ex) {
+        Console.WriteLine($"Error opening browser: {ex.Message}");
+      }
     }
   }
 }

@@ -24,10 +24,10 @@
     /// </summary>
     private void InitializeComponent() {
       components = new System.ComponentModel.Container();
-      DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-      DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-      DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-      DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+      DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+      DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+      DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+      DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       imeiBox = new TextBox();
       hostBox = new TextBox();
@@ -90,7 +90,15 @@
       logsPage = new TabPage();
       logsBox = new RichTextBox();
       tabPage1 = new TabPage();
-      panel5 = new Panel();
+      pictureBox2 = new PictureBox();
+      label23 = new Label();
+      linkLabel4 = new LinkLabel();
+      label22 = new Label();
+      linkLabel3 = new LinkLabel();
+      label21 = new Label();
+      linkLabel2 = new LinkLabel();
+      label20 = new Label();
+      linkLabel1 = new LinkLabel();
       label18 = new Label();
       panel4 = new Panel();
       label19 = new Label();
@@ -122,6 +130,7 @@
       commandsPage.SuspendLayout();
       logsPage.SuspendLayout();
       tabPage1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
       panel4.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
       ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -134,12 +143,11 @@
       // 
       imeiBox.Font = new Font("Segoe UI", 10.2F);
       imeiBox.ForeColor = SystemColors.ControlText;
-      imeiBox.Location = new Point(67, 32);
-      imeiBox.Margin = new Padding(3, 2, 3, 2);
+      imeiBox.Location = new Point(77, 43);
       imeiBox.MaxLength = 15;
       imeiBox.Name = "imeiBox";
       imeiBox.PlaceholderText = "IMEI";
-      imeiBox.Size = new Size(210, 26);
+      imeiBox.Size = new Size(239, 30);
       imeiBox.TabIndex = 0;
       imeiBox.Text = "350317179894484";
       // 
@@ -147,11 +155,10 @@
       // 
       hostBox.Font = new Font("Segoe UI", 10.2F);
       hostBox.ForeColor = SystemColors.ControlText;
-      hostBox.Location = new Point(67, 65);
-      hostBox.Margin = new Padding(3, 2, 3, 2);
+      hostBox.Location = new Point(77, 84);
       hostBox.Name = "hostBox";
       hostBox.PlaceholderText = "Host";
-      hostBox.Size = new Size(210, 26);
+      hostBox.Size = new Size(239, 30);
       hostBox.TabIndex = 1;
       hostBox.Text = "127.0.0.1";
       // 
@@ -159,11 +166,10 @@
       // 
       portBox.Font = new Font("Segoe UI", 10.2F);
       portBox.ForeColor = SystemColors.ControlText;
-      portBox.Location = new Point(67, 98);
-      portBox.Margin = new Padding(3, 2, 3, 2);
+      portBox.Location = new Point(77, 125);
       portBox.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
       portBox.Name = "portBox";
-      portBox.Size = new Size(131, 26);
+      portBox.Size = new Size(150, 30);
       portBox.TabIndex = 2;
       portBox.Value = new decimal(new int[] { 57000, 0, 0, 0 });
       // 
@@ -172,9 +178,9 @@
       label1.AutoSize = true;
       label1.Font = new Font("Segoe UI", 10.2F);
       label1.ForeColor = SystemColors.ControlText;
-      label1.Location = new Point(22, 35);
+      label1.Location = new Point(26, 47);
       label1.Name = "label1";
-      label1.Size = new Size(37, 19);
+      label1.Size = new Size(44, 23);
       label1.TabIndex = 3;
       label1.Text = "IMEI";
       // 
@@ -183,9 +189,9 @@
       label2.AutoSize = true;
       label2.Font = new Font("Segoe UI", 10.2F);
       label2.ForeColor = SystemColors.ControlText;
-      label2.Location = new Point(22, 69);
+      label2.Location = new Point(26, 88);
       label2.Name = "label2";
-      label2.Size = new Size(38, 19);
+      label2.Size = new Size(45, 23);
       label2.TabIndex = 4;
       label2.Text = "Host";
       // 
@@ -194,19 +200,18 @@
       label3.AutoSize = true;
       label3.Font = new Font("Segoe UI", 10.2F);
       label3.ForeColor = SystemColors.ControlText;
-      label3.Location = new Point(22, 101);
+      label3.Location = new Point(26, 128);
       label3.Name = "label3";
-      label3.Size = new Size(34, 19);
+      label3.Size = new Size(41, 23);
       label3.TabIndex = 5;
       label3.Text = "Port";
       // 
       // connectButton
       // 
       connectButton.ForeColor = Color.Green;
-      connectButton.Location = new Point(3, 19);
-      connectButton.Margin = new Padding(3, 2, 3, 2);
+      connectButton.Location = new Point(3, 25);
       connectButton.Name = "connectButton";
-      connectButton.Size = new Size(100, 35);
+      connectButton.Size = new Size(114, 47);
       connectButton.TabIndex = 6;
       connectButton.Text = "Connect";
       connectButton.UseVisualStyleBackColor = true;
@@ -225,10 +230,8 @@
       socketGroup.Font = new Font("Cascadia Mono", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
       socketGroup.ForeColor = Color.Red;
       socketGroup.Location = new Point(0, 0);
-      socketGroup.Margin = new Padding(3, 2, 3, 2);
       socketGroup.Name = "socketGroup";
-      socketGroup.Padding = new Padding(3, 2, 3, 2);
-      socketGroup.Size = new Size(534, 135);
+      socketGroup.Size = new Size(610, 180);
       socketGroup.TabIndex = 8;
       socketGroup.TabStop = false;
       socketGroup.Text = "Client: Disconnected";
@@ -238,19 +241,19 @@
       panel3.Controls.Add(connectButton);
       panel3.Controls.Add(closeButton);
       panel3.Dock = DockStyle.Right;
-      panel3.Location = new Point(420, 19);
+      panel3.Location = new Point(480, 24);
+      panel3.Margin = new Padding(3, 4, 3, 4);
       panel3.Name = "panel3";
-      panel3.Size = new Size(111, 114);
+      panel3.Size = new Size(127, 153);
       panel3.TabIndex = 8;
       // 
       // closeButton
       // 
       closeButton.Enabled = false;
       closeButton.ForeColor = Color.Red;
-      closeButton.Location = new Point(3, 61);
-      closeButton.Margin = new Padding(3, 2, 3, 2);
+      closeButton.Location = new Point(3, 81);
       closeButton.Name = "closeButton";
-      closeButton.Size = new Size(100, 35);
+      closeButton.Size = new Size(114, 47);
       closeButton.TabIndex = 7;
       closeButton.Text = "Close";
       closeButton.UseVisualStyleBackColor = true;
@@ -265,20 +268,18 @@
       tabs.Controls.Add(tabPage1);
       tabs.Dock = DockStyle.Fill;
       tabs.Location = new Point(0, 0);
-      tabs.Margin = new Padding(3, 2, 3, 2);
       tabs.Name = "tabs";
       tabs.SelectedIndex = 0;
-      tabs.Size = new Size(534, 423);
+      tabs.Size = new Size(610, 564);
       tabs.TabIndex = 9;
       // 
       // recordsPage
       // 
       recordsPage.Controls.Add(recordsPanel);
-      recordsPage.Location = new Point(4, 24);
-      recordsPage.Margin = new Padding(3, 2, 3, 2);
+      recordsPage.Location = new Point(4, 29);
       recordsPage.Name = "recordsPage";
-      recordsPage.Padding = new Padding(3, 2, 3, 2);
-      recordsPage.Size = new Size(526, 395);
+      recordsPage.Padding = new Padding(3);
+      recordsPage.Size = new Size(602, 531);
       recordsPage.TabIndex = 0;
       recordsPage.Text = "Records";
       recordsPage.UseVisualStyleBackColor = true;
@@ -314,9 +315,10 @@
       recordsPanel.Controls.Add(label10);
       recordsPanel.Dock = DockStyle.Fill;
       recordsPanel.Enabled = false;
-      recordsPanel.Location = new Point(3, 2);
+      recordsPanel.Location = new Point(3, 3);
+      recordsPanel.Margin = new Padding(3, 4, 3, 4);
       recordsPanel.Name = "recordsPanel";
-      recordsPanel.Size = new Size(520, 391);
+      recordsPanel.Size = new Size(596, 525);
       recordsPanel.TabIndex = 30;
       // 
       // panel2
@@ -324,19 +326,19 @@
       panel2.Controls.Add(recordRandom);
       panel2.Controls.Add(recordDefault);
       panel2.Dock = DockStyle.Right;
-      panel2.Location = new Point(413, 0);
+      panel2.Location = new Point(474, 0);
+      panel2.Margin = new Padding(3, 4, 3, 4);
       panel2.Name = "panel2";
-      panel2.Size = new Size(107, 336);
+      panel2.Size = new Size(122, 452);
       panel2.TabIndex = 30;
       // 
       // recordRandom
       // 
       recordRandom.Font = new Font("Cascadia Mono", 10.2F);
       recordRandom.ForeColor = Color.RoyalBlue;
-      recordRandom.Location = new Point(3, 23);
-      recordRandom.Margin = new Padding(3, 2, 3, 2);
+      recordRandom.Location = new Point(3, 31);
       recordRandom.Name = "recordRandom";
-      recordRandom.Size = new Size(100, 35);
+      recordRandom.Size = new Size(114, 47);
       recordRandom.TabIndex = 25;
       recordRandom.Text = "Random";
       recordRandom.UseVisualStyleBackColor = true;
@@ -346,10 +348,9 @@
       // 
       recordDefault.Font = new Font("Cascadia Mono", 10.2F);
       recordDefault.ForeColor = Color.RoyalBlue;
-      recordDefault.Location = new Point(3, 66);
-      recordDefault.Margin = new Padding(3, 2, 3, 2);
+      recordDefault.Location = new Point(3, 88);
       recordDefault.Name = "recordDefault";
-      recordDefault.Size = new Size(100, 35);
+      recordDefault.Size = new Size(114, 47);
       recordDefault.TabIndex = 26;
       recordDefault.Text = "Default";
       recordDefault.UseVisualStyleBackColor = true;
@@ -358,31 +359,29 @@
       // label6
       // 
       label6.AutoSize = true;
-      label6.Location = new Point(15, 20);
+      label6.Location = new Point(17, 27);
       label6.Name = "label6";
-      label6.Size = new Size(66, 15);
+      label6.Size = new Size(83, 20);
       label6.TabIndex = 7;
       label6.Text = "Timestamp";
       // 
       // recordOdometer
       // 
       recordOdometer.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-      recordOdometer.Location = new Point(91, 218);
-      recordOdometer.Margin = new Padding(3, 2, 3, 2);
+      recordOdometer.Location = new Point(104, 291);
       recordOdometer.Maximum = new decimal(new int[] { 2147483640, 0, 0, 0 });
       recordOdometer.Name = "recordOdometer";
-      recordOdometer.Size = new Size(102, 23);
+      recordOdometer.Size = new Size(117, 27);
       recordOdometer.TabIndex = 29;
       recordOdometer.Value = new decimal(new int[] { 32527647, 0, 0, 0 });
       // 
       // recordSpeed
       // 
       recordSpeed.Increment = new decimal(new int[] { 5, 0, 0, 0 });
-      recordSpeed.Location = new Point(91, 189);
-      recordSpeed.Margin = new Padding(3, 2, 3, 2);
+      recordSpeed.Location = new Point(104, 252);
       recordSpeed.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
       recordSpeed.Name = "recordSpeed";
-      recordSpeed.Size = new Size(102, 23);
+      recordSpeed.Size = new Size(117, 27);
       recordSpeed.TabIndex = 0;
       // 
       // recordNow
@@ -390,10 +389,9 @@
       recordNow.AutoSize = true;
       recordNow.Checked = true;
       recordNow.CheckState = CheckState.Checked;
-      recordNow.Location = new Point(297, 20);
-      recordNow.Margin = new Padding(3, 2, 3, 2);
+      recordNow.Location = new Point(339, 27);
       recordNow.Name = "recordNow";
-      recordNow.Size = new Size(51, 19);
+      recordNow.Size = new Size(62, 24);
       recordNow.TabIndex = 27;
       recordNow.Text = "Now";
       recordNow.UseVisualStyleBackColor = true;
@@ -402,9 +400,9 @@
       // speedLabel
       // 
       speedLabel.AutoSize = true;
-      speedLabel.Location = new Point(15, 194);
+      speedLabel.Location = new Point(17, 259);
       speedLabel.Name = "speedLabel";
-      speedLabel.Size = new Size(39, 15);
+      speedLabel.Size = new Size(51, 20);
       speedLabel.TabIndex = 1;
       speedLabel.Text = "Speed";
       // 
@@ -413,22 +411,20 @@
       recordTime.CustomFormat = "hh:mm:ss tt d/M/yyyy";
       recordTime.Enabled = false;
       recordTime.Format = DateTimePickerFormat.Custom;
-      recordTime.Location = new Point(91, 18);
-      recordTime.Margin = new Padding(3, 2, 3, 2);
+      recordTime.Location = new Point(104, 24);
       recordTime.Name = "recordTime";
-      recordTime.Size = new Size(197, 23);
+      recordTime.Size = new Size(225, 27);
       recordTime.TabIndex = 2;
       // 
       // recordLongitude
       // 
       recordLongitude.DecimalPlaces = 7;
       recordLongitude.Increment = new decimal(new int[] { 1, 0, 0, 393216 });
-      recordLongitude.Location = new Point(91, 46);
-      recordLongitude.Margin = new Padding(3, 2, 3, 2);
+      recordLongitude.Location = new Point(104, 61);
       recordLongitude.Maximum = new decimal(new int[] { 180, 0, 0, 0 });
       recordLongitude.Minimum = new decimal(new int[] { 180, 0, 0, int.MinValue });
       recordLongitude.Name = "recordLongitude";
-      recordLongitude.Size = new Size(102, 23);
+      recordLongitude.Size = new Size(117, 27);
       recordLongitude.TabIndex = 3;
       recordLongitude.Value = new decimal(new int[] { 46622610, 0, 0, 393216 });
       // 
@@ -437,10 +433,9 @@
       recordSend.Dock = DockStyle.Bottom;
       recordSend.Font = new Font("Cascadia Mono SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
       recordSend.ForeColor = Color.Green;
-      recordSend.Location = new Point(0, 336);
-      recordSend.Margin = new Padding(3, 2, 3, 2);
+      recordSend.Location = new Point(0, 452);
       recordSend.Name = "recordSend";
-      recordSend.Size = new Size(520, 55);
+      recordSend.Size = new Size(596, 73);
       recordSend.TabIndex = 24;
       recordSend.Text = "Send";
       recordSend.UseVisualStyleBackColor = true;
@@ -449,19 +444,18 @@
       // label4
       // 
       label4.AutoSize = true;
-      label4.Location = new Point(15, 49);
+      label4.Location = new Point(17, 65);
       label4.Name = "label4";
-      label4.Size = new Size(61, 15);
+      label4.Size = new Size(76, 20);
       label4.TabIndex = 4;
       label4.Text = "Longitude";
       // 
       // recordIdle
       // 
       recordIdle.AutoSize = true;
-      recordIdle.Location = new Point(207, 280);
-      recordIdle.Margin = new Padding(3, 2, 3, 2);
+      recordIdle.Location = new Point(237, 373);
       recordIdle.Name = "recordIdle";
-      recordIdle.Size = new Size(45, 19);
+      recordIdle.Size = new Size(56, 24);
       recordIdle.TabIndex = 23;
       recordIdle.Text = "Idle";
       recordIdle.UseVisualStyleBackColor = true;
@@ -470,22 +464,20 @@
       // 
       recordLatitude.DecimalPlaces = 7;
       recordLatitude.Increment = new decimal(new int[] { 1, 0, 0, 393216 });
-      recordLatitude.Location = new Point(91, 75);
-      recordLatitude.Margin = new Padding(3, 2, 3, 2);
+      recordLatitude.Location = new Point(104, 100);
       recordLatitude.Maximum = new decimal(new int[] { 90, 0, 0, 0 });
       recordLatitude.Minimum = new decimal(new int[] { 90, 0, 0, int.MinValue });
       recordLatitude.Name = "recordLatitude";
-      recordLatitude.Size = new Size(102, 23);
+      recordLatitude.Size = new Size(117, 27);
       recordLatitude.TabIndex = 5;
       recordLatitude.Value = new decimal(new int[] { 24663066, 0, 0, 393216 });
       // 
       // recordMovement
       // 
       recordMovement.AutoSize = true;
-      recordMovement.Location = new Point(207, 220);
-      recordMovement.Margin = new Padding(3, 2, 3, 2);
+      recordMovement.Location = new Point(237, 293);
       recordMovement.Name = "recordMovement";
-      recordMovement.Size = new Size(84, 19);
+      recordMovement.Size = new Size(102, 24);
       recordMovement.TabIndex = 22;
       recordMovement.Text = "Movement";
       recordMovement.UseVisualStyleBackColor = true;
@@ -493,30 +485,28 @@
       // label5
       // 
       label5.AutoSize = true;
-      label5.Location = new Point(15, 77);
+      label5.Location = new Point(17, 103);
       label5.Name = "label5";
-      label5.Size = new Size(50, 15);
+      label5.Size = new Size(63, 20);
       label5.TabIndex = 6;
       label5.Text = "Latitude";
       // 
       // recordTow
       // 
       recordTow.AutoSize = true;
-      recordTow.Location = new Point(207, 250);
-      recordTow.Margin = new Padding(3, 2, 3, 2);
+      recordTow.Location = new Point(237, 333);
       recordTow.Name = "recordTow";
-      recordTow.Size = new Size(47, 19);
+      recordTow.Size = new Size(58, 24);
       recordTow.TabIndex = 21;
       recordTow.Text = "Tow";
       recordTow.UseVisualStyleBackColor = true;
       // 
       // recordAltitude
       // 
-      recordAltitude.Location = new Point(91, 104);
-      recordAltitude.Margin = new Padding(3, 2, 3, 2);
+      recordAltitude.Location = new Point(104, 139);
       recordAltitude.Maximum = new decimal(new int[] { 9000, 0, 0, 0 });
       recordAltitude.Name = "recordAltitude";
-      recordAltitude.Size = new Size(102, 23);
+      recordAltitude.Size = new Size(117, 27);
       recordAltitude.TabIndex = 8;
       recordAltitude.Value = new decimal(new int[] { 636, 0, 0, 0 });
       // 
@@ -525,10 +515,9 @@
       recordIgnition.AutoSize = true;
       recordIgnition.Checked = true;
       recordIgnition.CheckState = CheckState.Checked;
-      recordIgnition.Location = new Point(207, 190);
-      recordIgnition.Margin = new Padding(3, 2, 3, 2);
+      recordIgnition.Location = new Point(237, 253);
       recordIgnition.Name = "recordIgnition";
-      recordIgnition.Size = new Size(67, 19);
+      recordIgnition.Size = new Size(82, 24);
       recordIgnition.TabIndex = 20;
       recordIgnition.Text = "Ignition";
       recordIgnition.UseVisualStyleBackColor = true;
@@ -536,95 +525,91 @@
       // label7
       // 
       label7.AutoSize = true;
-      label7.Location = new Point(15, 106);
+      label7.Location = new Point(17, 141);
       label7.Name = "label7";
-      label7.Size = new Size(49, 15);
+      label7.Size = new Size(62, 20);
       label7.TabIndex = 9;
       label7.Text = "Altitude";
       // 
       // label12
       // 
       label12.AutoSize = true;
-      label12.Location = new Point(15, 278);
+      label12.Location = new Point(17, 371);
       label12.Name = "label12";
-      label12.Size = new Size(44, 15);
+      label12.Size = new Size(56, 20);
       label12.TabIndex = 19;
       label12.Text = "Battery";
       // 
       // recordAngle
       // 
-      recordAngle.Location = new Point(91, 132);
-      recordAngle.Margin = new Padding(3, 2, 3, 2);
+      recordAngle.Location = new Point(104, 176);
       recordAngle.Maximum = new decimal(new int[] { 360, 0, 0, 0 });
       recordAngle.Name = "recordAngle";
-      recordAngle.Size = new Size(102, 23);
+      recordAngle.Size = new Size(117, 27);
       recordAngle.TabIndex = 10;
       recordAngle.Value = new decimal(new int[] { 143, 0, 0, 0 });
       // 
       // recordBattery
       // 
       recordBattery.Increment = new decimal(new int[] { 5, 0, 0, 0 });
-      recordBattery.Location = new Point(91, 274);
-      recordBattery.Margin = new Padding(3, 2, 3, 2);
+      recordBattery.Location = new Point(104, 365);
       recordBattery.Name = "recordBattery";
-      recordBattery.Size = new Size(102, 23);
+      recordBattery.Size = new Size(117, 27);
       recordBattery.TabIndex = 18;
       recordBattery.Value = new decimal(new int[] { 100, 0, 0, 0 });
       // 
       // label8
       // 
       label8.AutoSize = true;
-      label8.Location = new Point(15, 134);
+      label8.Location = new Point(17, 179);
       label8.Name = "label8";
-      label8.Size = new Size(38, 15);
+      label8.Size = new Size(48, 20);
       label8.TabIndex = 11;
       label8.Text = "Angle";
       // 
       // label11
       // 
       label11.AutoSize = true;
-      label11.Location = new Point(15, 248);
+      label11.Location = new Point(17, 331);
       label11.Name = "label11";
-      label11.Size = new Size(46, 15);
+      label11.Size = new Size(60, 20);
       label11.TabIndex = 17;
       label11.Text = "Voltage";
       // 
       // recordSatallites
       // 
-      recordSatallites.Location = new Point(91, 160);
-      recordSatallites.Margin = new Padding(3, 2, 3, 2);
+      recordSatallites.Location = new Point(104, 213);
       recordSatallites.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
       recordSatallites.Name = "recordSatallites";
-      recordSatallites.Size = new Size(102, 23);
+      recordSatallites.Size = new Size(117, 27);
       recordSatallites.TabIndex = 12;
       recordSatallites.Value = new decimal(new int[] { 12, 0, 0, 0 });
       // 
       // recordVoltage
       // 
       recordVoltage.DecimalPlaces = 3;
-      recordVoltage.Location = new Point(91, 246);
-      recordVoltage.Margin = new Padding(3, 2, 3, 2);
+      recordVoltage.Location = new Point(104, 328);
       recordVoltage.Maximum = new decimal(new int[] { 65, 0, 0, 0 });
       recordVoltage.Name = "recordVoltage";
-      recordVoltage.Size = new Size(102, 23);
+      recordVoltage.Size = new Size(117, 27);
       recordVoltage.TabIndex = 16;
       recordVoltage.Value = new decimal(new int[] { 1307, 0, 0, 131072 });
       // 
       // label9
       // 
       label9.AutoSize = true;
-      label9.Location = new Point(15, 164);
+      label9.Location = new Point(17, 219);
       label9.Name = "label9";
-      label9.Size = new Size(53, 15);
+      label9.Size = new Size(69, 20);
       label9.TabIndex = 13;
       label9.Text = "Satallites";
       // 
       // label10
       // 
       label10.AutoSize = true;
-      label10.Location = new Point(15, 220);
+      label10.Location = new Point(17, 293);
       label10.Name = "label10";
-      label10.Size = new Size(61, 15);
+      label10.Size = new Size(77, 20);
       label10.TabIndex = 15;
       label10.Text = "Odometer";
       // 
@@ -632,60 +617,61 @@
       // 
       responsesPage.Controls.Add(responseList);
       responsesPage.Controls.Add(panel1);
-      responsesPage.Location = new Point(4, 24);
-      responsesPage.Margin = new Padding(3, 2, 3, 2);
+      responsesPage.Location = new Point(4, 29);
       responsesPage.Name = "responsesPage";
-      responsesPage.Padding = new Padding(3, 2, 3, 2);
-      responsesPage.Size = new Size(526, 395);
+      responsesPage.Padding = new Padding(3);
+      responsesPage.Size = new Size(602, 531);
       responsesPage.TabIndex = 1;
       responsesPage.Text = "Response List";
       responsesPage.UseVisualStyleBackColor = true;
       // 
       // responseList
       // 
-      dataGridViewCellStyle5.Font = new Font("Cascadia Mono", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-      responseList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+      dataGridViewCellStyle1.Font = new Font("Cascadia Mono", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+      responseList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
       responseList.AutoGenerateColumns = false;
       responseList.BackgroundColor = SystemColors.ControlLightLight;
       responseList.BorderStyle = BorderStyle.Fixed3D;
       responseList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle6.BackColor = Color.RoyalBlue;
-      dataGridViewCellStyle6.Font = new Font("Cascadia Mono", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-      dataGridViewCellStyle6.ForeColor = Color.White;
-      dataGridViewCellStyle6.SelectionBackColor = Color.RoyalBlue;
-      dataGridViewCellStyle6.SelectionForeColor = Color.White;
-      dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-      responseList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+      dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = Color.RoyalBlue;
+      dataGridViewCellStyle2.Font = new Font("Cascadia Mono", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+      dataGridViewCellStyle2.ForeColor = Color.White;
+      dataGridViewCellStyle2.SelectionBackColor = Color.RoyalBlue;
+      dataGridViewCellStyle2.SelectionForeColor = Color.White;
+      dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+      responseList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
       responseList.ColumnHeadersHeight = 35;
       responseList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
       responseList.Columns.AddRange(new DataGridViewColumn[] { commandDataGridViewTextBoxColumn, responseDataGridViewTextBoxColumn });
       responseList.DataSource = responseBindingSource;
-      dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle7.BackColor = SystemColors.Window;
-      dataGridViewCellStyle7.Font = new Font("Cascadia Mono", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-      dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
-      dataGridViewCellStyle7.SelectionBackColor = Color.LightBlue;
-      dataGridViewCellStyle7.SelectionForeColor = SystemColors.ControlText;
-      dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-      responseList.DefaultCellStyle = dataGridViewCellStyle7;
+      dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle3.BackColor = SystemColors.Window;
+      dataGridViewCellStyle3.Font = new Font("Cascadia Mono", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+      dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+      dataGridViewCellStyle3.SelectionBackColor = Color.LightBlue;
+      dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlText;
+      dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+      responseList.DefaultCellStyle = dataGridViewCellStyle3;
       responseList.Dock = DockStyle.Fill;
       responseList.EnableHeadersVisualStyles = false;
-      responseList.Location = new Point(3, 2);
+      responseList.Location = new Point(3, 3);
+      responseList.Margin = new Padding(3, 4, 3, 4);
       responseList.MultiSelect = false;
       responseList.Name = "responseList";
       responseList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle8.BackColor = SystemColors.Control;
-      dataGridViewCellStyle8.Font = new Font("Cascadia Mono", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-      dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-      dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-      dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-      dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-      responseList.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+      dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle4.BackColor = SystemColors.Control;
+      dataGridViewCellStyle4.Font = new Font("Cascadia Mono", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+      dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+      dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+      dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+      dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+      responseList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
       responseList.RowHeadersVisible = false;
+      responseList.RowHeadersWidth = 51;
       responseList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-      responseList.Size = new Size(520, 316);
+      responseList.Size = new Size(596, 425);
       responseList.TabIndex = 10;
       // 
       // commandDataGridViewTextBoxColumn
@@ -716,9 +702,10 @@
       panel1.Controls.Add(label13);
       panel1.Controls.Add(commandBox);
       panel1.Dock = DockStyle.Bottom;
-      panel1.Location = new Point(3, 318);
+      panel1.Location = new Point(3, 428);
+      panel1.Margin = new Padding(3, 4, 3, 4);
       panel1.Name = "panel1";
-      panel1.Size = new Size(520, 75);
+      panel1.Size = new Size(596, 100);
       panel1.TabIndex = 1;
       // 
       // addResponse
@@ -726,9 +713,10 @@
       addResponse.Enabled = false;
       addResponse.Font = new Font("Cascadia Mono", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
       addResponse.ForeColor = Color.Green;
-      addResponse.Location = new Point(275, 19);
+      addResponse.Location = new Point(314, 25);
+      addResponse.Margin = new Padding(3, 4, 3, 4);
       addResponse.Name = "addResponse";
-      addResponse.Size = new Size(100, 35);
+      addResponse.Size = new Size(114, 47);
       addResponse.TabIndex = 4;
       addResponse.Text = "Add";
       addResponse.UseVisualStyleBackColor = true;
@@ -737,46 +725,49 @@
       // label14
       // 
       label14.AutoSize = true;
-      label14.Location = new Point(12, 44);
+      label14.Location = new Point(14, 59);
       label14.Name = "label14";
-      label14.Size = new Size(57, 15);
+      label14.Size = new Size(72, 20);
       label14.TabIndex = 3;
       label14.Text = "Response";
       // 
       // responseBox
       // 
-      responseBox.Location = new Point(87, 40);
+      responseBox.Location = new Point(99, 53);
+      responseBox.Margin = new Padding(3, 4, 3, 4);
       responseBox.Name = "responseBox";
       responseBox.PlaceholderText = "Response";
-      responseBox.Size = new Size(162, 23);
+      responseBox.Size = new Size(185, 27);
       responseBox.TabIndex = 2;
       responseBox.TextChanged += responseBox_TextChanged;
       // 
       // label13
       // 
       label13.AutoSize = true;
-      label13.Location = new Point(12, 15);
+      label13.Location = new Point(14, 20);
       label13.Name = "label13";
-      label13.Size = new Size(64, 15);
+      label13.Size = new Size(78, 20);
       label13.TabIndex = 1;
       label13.Text = "Command";
       // 
       // commandBox
       // 
-      commandBox.Location = new Point(87, 11);
+      commandBox.Location = new Point(99, 15);
+      commandBox.Margin = new Padding(3, 4, 3, 4);
       commandBox.Name = "commandBox";
       commandBox.PlaceholderText = "Command";
-      commandBox.Size = new Size(162, 23);
+      commandBox.Size = new Size(185, 27);
       commandBox.TabIndex = 0;
       commandBox.TextChanged += commandBox_TextChanged;
       // 
       // commandsPage
       // 
       commandsPage.Controls.Add(commandsList);
-      commandsPage.Location = new Point(4, 24);
+      commandsPage.Location = new Point(4, 29);
+      commandsPage.Margin = new Padding(3, 4, 3, 4);
       commandsPage.Name = "commandsPage";
-      commandsPage.Padding = new Padding(3);
-      commandsPage.Size = new Size(526, 395);
+      commandsPage.Padding = new Padding(3, 4, 3, 4);
+      commandsPage.Size = new Size(602, 531);
       commandsPage.TabIndex = 2;
       commandsPage.Text = "Commands";
       commandsPage.UseVisualStyleBackColor = true;
@@ -788,10 +779,11 @@
       commandsList.Font = new Font("Cascadia Mono", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
       commandsList.FullRowSelect = true;
       commandsList.GridLines = true;
-      commandsList.Location = new Point(3, 3);
+      commandsList.Location = new Point(3, 4);
+      commandsList.Margin = new Padding(3, 4, 3, 4);
       commandsList.MultiSelect = false;
       commandsList.Name = "commandsList";
-      commandsList.Size = new Size(520, 389);
+      commandsList.Size = new Size(596, 523);
       commandsList.TabIndex = 0;
       commandsList.UseCompatibleStateImageBehavior = false;
       commandsList.View = View.Details;
@@ -815,10 +807,11 @@
       // logsPage
       // 
       logsPage.Controls.Add(logsBox);
-      logsPage.Location = new Point(4, 24);
+      logsPage.Location = new Point(4, 29);
+      logsPage.Margin = new Padding(3, 4, 3, 4);
       logsPage.Name = "logsPage";
-      logsPage.Padding = new Padding(3);
-      logsPage.Size = new Size(526, 395);
+      logsPage.Padding = new Padding(3, 4, 3, 4);
+      logsPage.Size = new Size(602, 531);
       logsPage.TabIndex = 3;
       logsPage.Text = "Logs";
       logsPage.UseVisualStyleBackColor = true;
@@ -830,43 +823,146 @@
       logsBox.Dock = DockStyle.Fill;
       logsBox.Font = new Font("Cascadia Mono", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
       logsBox.ForeColor = Color.White;
-      logsBox.Location = new Point(3, 3);
+      logsBox.Location = new Point(3, 4);
+      logsBox.Margin = new Padding(3, 4, 3, 4);
       logsBox.Name = "logsBox";
       logsBox.ReadOnly = true;
-      logsBox.Size = new Size(520, 389);
+      logsBox.Size = new Size(596, 523);
       logsBox.TabIndex = 0;
       logsBox.Text = "";
       // 
       // tabPage1
       // 
-      tabPage1.Controls.Add(panel5);
+      tabPage1.Controls.Add(pictureBox2);
+      tabPage1.Controls.Add(label23);
+      tabPage1.Controls.Add(linkLabel4);
+      tabPage1.Controls.Add(label22);
+      tabPage1.Controls.Add(linkLabel3);
+      tabPage1.Controls.Add(label21);
+      tabPage1.Controls.Add(linkLabel2);
+      tabPage1.Controls.Add(label20);
+      tabPage1.Controls.Add(linkLabel1);
       tabPage1.Controls.Add(label18);
       tabPage1.Controls.Add(panel4);
       tabPage1.Controls.Add(pictureBox1);
-      tabPage1.Location = new Point(4, 24);
+      tabPage1.Location = new Point(4, 29);
+      tabPage1.Margin = new Padding(3, 4, 3, 4);
       tabPage1.Name = "tabPage1";
-      tabPage1.Padding = new Padding(3);
-      tabPage1.Size = new Size(526, 395);
+      tabPage1.Padding = new Padding(3, 4, 3, 4);
+      tabPage1.Size = new Size(602, 531);
       tabPage1.TabIndex = 4;
       tabPage1.Text = "About";
       tabPage1.UseVisualStyleBackColor = true;
       // 
-      // panel5
+      // pictureBox2
       // 
-      panel5.Location = new Point(18, 154);
-      panel5.Name = "panel5";
-      panel5.Size = new Size(500, 189);
-      panel5.TabIndex = 4;
+      pictureBox2.Cursor = Cursors.Hand;
+      pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+      pictureBox2.Location = new Point(401, 293);
+      pictureBox2.Name = "pictureBox2";
+      pictureBox2.Size = new Size(24, 24);
+      pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+      pictureBox2.TabIndex = 12;
+      pictureBox2.TabStop = false;
+      pictureBox2.Click += pictureBox2_Click;
+      // 
+      // label23
+      // 
+      label23.AutoSize = true;
+      label23.Font = new Font("Segoe UI", 10.2F);
+      label23.Location = new Point(40, 330);
+      label23.Name = "label23";
+      label23.Size = new Size(90, 23);
+      label23.TabIndex = 11;
+      label23.Text = "About me:";
+      // 
+      // linkLabel4
+      // 
+      linkLabel4.AutoSize = true;
+      linkLabel4.Font = new Font("Segoe UI", 10.2F);
+      linkLabel4.Location = new Point(134, 330);
+      linkLabel4.Name = "linkLabel4";
+      linkLabel4.Size = new Size(191, 23);
+      linkLabel4.TabIndex = 10;
+      linkLabel4.TabStop = true;
+      linkLabel4.Text = "https://m-ngr.super.site";
+      linkLabel4.LinkClicked += linkLabel4_LinkClicked;
+      // 
+      // label22
+      // 
+      label22.AutoSize = true;
+      label22.Font = new Font("Segoe UI", 10.2F);
+      label22.Location = new Point(40, 293);
+      label22.Name = "label22";
+      label22.Size = new Size(74, 23);
+      label22.TabIndex = 9;
+      label22.Text = "Contact:";
+      // 
+      // linkLabel3
+      // 
+      linkLabel3.AutoSize = true;
+      linkLabel3.Font = new Font("Segoe UI", 10.2F);
+      linkLabel3.Location = new Point(118, 293);
+      linkLabel3.Name = "linkLabel3";
+      linkLabel3.Size = new Size(281, 23);
+      linkLabel3.TabIndex = 8;
+      linkLabel3.TabStop = true;
+      linkLabel3.Text = "mahmoud.elnagar1698@gmail.com";
+      linkLabel3.LinkClicked += linkLabel3_LinkClicked;
+      // 
+      // label21
+      // 
+      label21.AutoSize = true;
+      label21.Font = new Font("Segoe UI", 10.2F);
+      label21.Location = new Point(40, 256);
+      label21.Name = "label21";
+      label21.Size = new Size(144, 23);
+      label21.TabIndex = 7;
+      label21.Text = "Connect with me:";
+      // 
+      // linkLabel2
+      // 
+      linkLabel2.AutoSize = true;
+      linkLabel2.Font = new Font("Segoe UI", 10.2F);
+      linkLabel2.Location = new Point(186, 256);
+      linkLabel2.Name = "linkLabel2";
+      linkLabel2.Size = new Size(279, 23);
+      linkLabel2.TabIndex = 6;
+      linkLabel2.TabStop = true;
+      linkLabel2.Text = "https://www.linkedin.com/in/m-ngr";
+      linkLabel2.LinkClicked += linkLabel2_LinkClicked;
+      // 
+      // label20
+      // 
+      label20.AutoSize = true;
+      label20.Font = new Font("Segoe UI", 10.2F);
+      label20.Location = new Point(40, 219);
+      label20.Name = "label20";
+      label20.Size = new Size(111, 23);
+      label20.TabIndex = 5;
+      label20.Text = "Source Code:";
+      // 
+      // linkLabel1
+      // 
+      linkLabel1.AutoSize = true;
+      linkLabel1.Font = new Font("Segoe UI", 10.2F);
+      linkLabel1.Location = new Point(157, 219);
+      linkLabel1.Name = "linkLabel1";
+      linkLabel1.Size = new Size(330, 23);
+      linkLabel1.TabIndex = 4;
+      linkLabel1.TabStop = true;
+      linkLabel1.Text = "https://github.com/m-ngr/teltonika-client";
+      linkLabel1.LinkClicked += linkLabel1_LinkClicked;
       // 
       // label18
       // 
       label18.Dock = DockStyle.Bottom;
       label18.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-      label18.Location = new Point(3, 346);
+      label18.Location = new Point(3, 466);
       label18.Name = "label18";
-      label18.Size = new Size(520, 46);
+      label18.Size = new Size(596, 61);
       label18.TabIndex = 3;
-      label18.Text = "© 2024 Mahmoud Elnagar. All rights reserved.";
+      label18.Text = "© 2024 Mahmoud Elnagar. Licensed under the GNU GPLv2.";
       label18.TextAlign = ContentAlignment.MiddleCenter;
       // 
       // panel4
@@ -875,28 +971,29 @@
       panel4.Controls.Add(label17);
       panel4.Controls.Add(label16);
       panel4.Controls.Add(label15);
-      panel4.Location = new Point(152, 20);
+      panel4.Location = new Point(175, 27);
+      panel4.Margin = new Padding(3, 4, 3, 4);
       panel4.Name = "panel4";
-      panel4.Size = new Size(366, 128);
+      panel4.Size = new Size(418, 149);
       panel4.TabIndex = 2;
       // 
       // label19
       // 
       label19.AutoSize = true;
-      label19.Font = new Font("Cascadia Mono", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-      label19.Location = new Point(10, 82);
+      label19.Font = new Font("Cascadia Mono", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+      label19.Location = new Point(22, 98);
       label19.Name = "label19";
-      label19.Size = new Size(296, 18);
+      label19.Size = new Size(228, 27);
       label19.TabIndex = 4;
-      label19.Text = "Email: mahmoud.elnagar1698@gmail.com";
+      label19.Text = "Licence: GNU GPLv2";
       // 
       // label17
       // 
       label17.AutoSize = true;
       label17.Font = new Font("Cascadia Mono", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-      label17.Location = new Point(10, 49);
+      label17.Location = new Point(22, 61);
       label17.Name = "label17";
-      label17.Size = new Size(217, 21);
+      label17.Size = new Size(288, 27);
       label17.TabIndex = 3;
       label17.Text = "Author: Mahmoud Elnagar";
       // 
@@ -905,9 +1002,9 @@
       label16.AutoSize = true;
       label16.Font = new Font("Cascadia Mono", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
       label16.ForeColor = Color.Crimson;
-      label16.Location = new Point(271, 7);
+      label16.Location = new Point(310, 9);
       label16.Name = "label16";
-      label16.Size = new Size(65, 29);
+      label16.Size = new Size(81, 37);
       label16.TabIndex = 2;
       label16.Text = "v0.1";
       // 
@@ -915,16 +1012,17 @@
       // 
       label15.AutoSize = true;
       label15.Font = new Font("Cascadia Mono", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-      label15.Location = new Point(10, 5);
+      label15.Location = new Point(11, 7);
       label15.Name = "label15";
-      label15.Size = new Size(238, 32);
+      label15.Size = new Size(305, 40);
       label15.TabIndex = 1;
       label15.Text = "Teltonika Client";
       // 
       // pictureBox1
       // 
       pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-      pictureBox1.Location = new Point(18, 20);
+      pictureBox1.Location = new Point(21, 37);
+      pictureBox1.Margin = new Padding(3, 4, 3, 4);
       pictureBox1.Name = "pictureBox1";
       pictureBox1.Size = new Size(128, 128);
       pictureBox1.TabIndex = 0;
@@ -936,7 +1034,6 @@
       splitContainer1.FixedPanel = FixedPanel.Panel1;
       splitContainer1.IsSplitterFixed = true;
       splitContainer1.Location = new Point(0, 0);
-      splitContainer1.Margin = new Padding(3, 2, 3, 2);
       splitContainer1.Name = "splitContainer1";
       splitContainer1.Orientation = Orientation.Horizontal;
       // 
@@ -947,20 +1044,18 @@
       // splitContainer1.Panel2
       // 
       splitContainer1.Panel2.Controls.Add(tabs);
-      splitContainer1.Size = new Size(534, 561);
-      splitContainer1.SplitterDistance = 135;
-      splitContainer1.SplitterWidth = 3;
+      splitContainer1.Size = new Size(610, 748);
+      splitContainer1.SplitterDistance = 180;
       splitContainer1.TabIndex = 10;
       // 
       // MainForm
       // 
-      AutoScaleDimensions = new SizeF(7F, 15F);
+      AutoScaleDimensions = new SizeF(8F, 20F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(534, 561);
+      ClientSize = new Size(610, 748);
       Controls.Add(splitContainer1);
       Icon = (Icon)resources.GetObject("$this.Icon");
-      Margin = new Padding(3, 2, 3, 2);
-      MinimumSize = new Size(550, 600);
+      MinimumSize = new Size(626, 784);
       Name = "MainForm";
       StartPosition = FormStartPosition.CenterScreen;
       Text = "Teltonika Client";
@@ -991,6 +1086,8 @@
       commandsPage.ResumeLayout(false);
       logsPage.ResumeLayout(false);
       tabPage1.ResumeLayout(false);
+      tabPage1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
       panel4.ResumeLayout(false);
       panel4.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -1071,7 +1168,15 @@
     private Label label16;
     private Label label15;
     private Label label18;
-    private Panel panel5;
     private Label label19;
+    private LinkLabel linkLabel1;
+    private Label label20;
+    private Label label22;
+    private LinkLabel linkLabel3;
+    private Label label21;
+    private LinkLabel linkLabel2;
+    private Label label23;
+    private LinkLabel linkLabel4;
+    private PictureBox pictureBox2;
   }
 }

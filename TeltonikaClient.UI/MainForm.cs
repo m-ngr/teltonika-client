@@ -29,9 +29,6 @@ namespace TeltonikaClient.UI {
     public MainForm() {
       InitializeComponent();
       logger = new RTBLogger(logsBox);
-      responseBindingSource.Add(new CommandResponse("Cmd1", "Resp1"));
-      responseBindingSource.Add(new CommandResponse("Cmd2", "Resp2"));
-      responseBindingSource.Add(new CommandResponse("Cmd3", "Resp3"));
     }
 
     private void connectButton_Click(object sender, EventArgs e) {
@@ -134,6 +131,26 @@ namespace TeltonikaClient.UI {
 
     private void commandsList_SizeChanged(object sender, EventArgs e) {
       FormUtils.SetEqualColumnWidths(commandsList);
+    }
+
+    private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+      FormUtils.OpenBrowser(linkLabel1.Text);
+    }
+
+    private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+      FormUtils.OpenBrowser(linkLabel2.Text);
+    }
+
+    private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+      FormUtils.OpenBrowser(linkLabel4.Text);
+    }
+
+    private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+      FormUtils.OpenBrowser($"mailto:{linkLabel3.Text}");
+    }
+
+    private void pictureBox2_Click(object sender, EventArgs e) {
+      Clipboard.SetText(linkLabel3.Text);
     }
   }
 }

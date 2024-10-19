@@ -41,7 +41,7 @@ namespace TeltonikaClient.Core {
     }
 
     private bool GoToNextPreamble() {
-      int index = Array.IndexOf(_stream, DATA_PREAMBLE);
+      int index = IndexOf(_stream, DATA_PREAMBLE);
 
       if(index == -1) {
         if(_stream.Length > 4) Clear(4);
@@ -86,6 +86,12 @@ namespace TeltonikaClient.Core {
       uint checksum = BitConverter.ToUInt32(_stream[^4..].Reverse().ToArray(), 0);
       return checksum == CRC16.Calculate(ReadData());
     }
-
+    static int IndexOf(byte[] buffer, byte[] sub) {
+      return buffer
+          .Select((b, i) => new { b, i })
+          .Where(x => x.i <= buffer.Length - sub.Length && sub.SequenceEqual(buffer.Skip(x.i).Take(sub.Length)))
+          .Select(x => x.i)
+          .FirstOrDefault(-1);
+    }
   }
 }

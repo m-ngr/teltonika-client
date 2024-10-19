@@ -6,8 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-		<ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
-		<ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
+		
   </PropertyGroup>
 		<ItemGroup>
 				<ProjectReference Include="..\TeltonikaClient.Core\TeltonikaClient.Core.csproj" />
