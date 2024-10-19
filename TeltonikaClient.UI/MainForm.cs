@@ -26,9 +26,14 @@ namespace TeltonikaClient.UI {
       };
     }
 
+    private ResponseSource _responseSource;
+
     public MainForm() {
       InitializeComponent();
       logger = new RTBLogger(logsBox);
+      _responseSource = new ResponseSource("responses.json");
+      _responseSource.Load();
+      responseList.DataSource = _responseSource.BindingSource;
     }
 
     private void connectButton_Click(object sender, EventArgs e) {
@@ -120,7 +125,7 @@ namespace TeltonikaClient.UI {
     }
 
     private void addResponse_Click(object sender, EventArgs e) {
-      responseBindingSource.Add(new CommandResponse(commandBox.Text, responseBox.Text));
+      _responseSource.Set(commandBox.Text, responseBox.Text);
       commandBox.Text = "";
       responseBox.Text = "";
     }
@@ -151,6 +156,10 @@ namespace TeltonikaClient.UI {
 
     private void pictureBox2_Click(object sender, EventArgs e) {
       Clipboard.SetText(linkLabel3.Text);
+    }
+
+    private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
+      _responseSource.Save();
     }
   }
 }

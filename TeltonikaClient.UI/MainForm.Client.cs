@@ -1,12 +1,7 @@
 ﻿using TeltonikaClient.Core;
 
 namespace TeltonikaClient.UI {
-  public class CommandResponse(string command, string response) {
-    public string Command { get; set; } = command;
-    public string Response { get; set; } = response;
-  }
-
-  public partial class MainForm : Form {
+  public partial class MainForm {
     TeltonikaSocket Client = new();
     private TeltonikaSocket CreateClient() {
       Client = new TeltonikaSocket();
@@ -50,16 +45,10 @@ namespace TeltonikaClient.UI {
       logger.Error($"Error: {error}");
     }
     private void OnCommand(object? sender, string command) {
-      var response = GetResponse(command);
+      var response = _responseSource.Get(command);
       Client.SendResponse(response);
       logger.Log($"Received Command: {command}, Sent Response: {response}.");
       AddCommandEntry(command, response);
-    }
-    private string GetResponse(string command) {
-      foreach(CommandResponse item in responseBindingSource) {
-        if(item.Command == command) return item.Response;
-      }
-      return $"{command}:Response";
     }
     private void AddCommandEntry(string command, string response) {
       string currentTime = DateTime.Now.ToString("HH:mm:ss");

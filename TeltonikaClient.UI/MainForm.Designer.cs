@@ -73,9 +73,6 @@
       label10 = new Label();
       responsesPage = new TabPage();
       responseList = new DataGridView();
-      commandDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-      responseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-      responseBindingSource = new BindingSource(components);
       panel1 = new Panel();
       addResponse = new Button();
       label14 = new Label();
@@ -107,6 +104,9 @@
       label15 = new Label();
       pictureBox1 = new PictureBox();
       splitContainer1 = new SplitContainer();
+      commandResponseBindingSource = new BindingSource(components);
+      commandDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+      responseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)portBox).BeginInit();
       socketGroup.SuspendLayout();
       panel3.SuspendLayout();
@@ -125,7 +125,6 @@
       ((System.ComponentModel.ISupportInitialize)recordVoltage).BeginInit();
       responsesPage.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)responseList).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)responseBindingSource).BeginInit();
       panel1.SuspendLayout();
       commandsPage.SuspendLayout();
       logsPage.SuspendLayout();
@@ -137,6 +136,7 @@
       splitContainer1.Panel1.SuspendLayout();
       splitContainer1.Panel2.SuspendLayout();
       splitContainer1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)commandResponseBindingSource).BeginInit();
       SuspendLayout();
       // 
       // imeiBox
@@ -644,7 +644,7 @@
       responseList.ColumnHeadersHeight = 35;
       responseList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
       responseList.Columns.AddRange(new DataGridViewColumn[] { commandDataGridViewTextBoxColumn, responseDataGridViewTextBoxColumn });
-      responseList.DataSource = responseBindingSource;
+      responseList.DataSource = commandResponseBindingSource;
       dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle3.BackColor = SystemColors.Window;
       dataGridViewCellStyle3.Font = new Font("Cascadia Mono", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -673,26 +673,6 @@
       responseList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
       responseList.Size = new Size(596, 425);
       responseList.TabIndex = 10;
-      // 
-      // commandDataGridViewTextBoxColumn
-      // 
-      commandDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-      commandDataGridViewTextBoxColumn.DataPropertyName = "Command";
-      commandDataGridViewTextBoxColumn.HeaderText = "Command";
-      commandDataGridViewTextBoxColumn.MinimumWidth = 200;
-      commandDataGridViewTextBoxColumn.Name = "commandDataGridViewTextBoxColumn";
-      // 
-      // responseDataGridViewTextBoxColumn
-      // 
-      responseDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-      responseDataGridViewTextBoxColumn.DataPropertyName = "Response";
-      responseDataGridViewTextBoxColumn.HeaderText = "Response";
-      responseDataGridViewTextBoxColumn.MinimumWidth = 200;
-      responseDataGridViewTextBoxColumn.Name = "responseDataGridViewTextBoxColumn";
-      // 
-      // responseBindingSource
-      // 
-      responseBindingSource.DataSource = typeof(CommandResponse);
       // 
       // panel1
       // 
@@ -1048,6 +1028,26 @@
       splitContainer1.SplitterDistance = 180;
       splitContainer1.TabIndex = 10;
       // 
+      // commandResponseBindingSource
+      // 
+      commandResponseBindingSource.DataSource = typeof(CommandResponse);
+      // 
+      // commandDataGridViewTextBoxColumn
+      // 
+      commandDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+      commandDataGridViewTextBoxColumn.DataPropertyName = "Command";
+      commandDataGridViewTextBoxColumn.HeaderText = "Command";
+      commandDataGridViewTextBoxColumn.MinimumWidth = 6;
+      commandDataGridViewTextBoxColumn.Name = "commandDataGridViewTextBoxColumn";
+      // 
+      // responseDataGridViewTextBoxColumn
+      // 
+      responseDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+      responseDataGridViewTextBoxColumn.DataPropertyName = "Response";
+      responseDataGridViewTextBoxColumn.HeaderText = "Response";
+      responseDataGridViewTextBoxColumn.MinimumWidth = 6;
+      responseDataGridViewTextBoxColumn.Name = "responseDataGridViewTextBoxColumn";
+      // 
       // MainForm
       // 
       AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1059,6 +1059,7 @@
       Name = "MainForm";
       StartPosition = FormStartPosition.CenterScreen;
       Text = "Teltonika Client";
+      FormClosing += MainForm_FormClosing;
       Load += MainForm_Load;
       ((System.ComponentModel.ISupportInitialize)portBox).EndInit();
       socketGroup.ResumeLayout(false);
@@ -1080,7 +1081,6 @@
       ((System.ComponentModel.ISupportInitialize)recordVoltage).EndInit();
       responsesPage.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)responseList).EndInit();
-      ((System.ComponentModel.ISupportInitialize)responseBindingSource).EndInit();
       panel1.ResumeLayout(false);
       panel1.PerformLayout();
       commandsPage.ResumeLayout(false);
@@ -1095,6 +1095,7 @@
       splitContainer1.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
       splitContainer1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)commandResponseBindingSource).EndInit();
       ResumeLayout(false);
     }
 
@@ -1143,7 +1144,6 @@
     private NumericUpDown recordOdometer;
     private Panel recordsPanel;
     private DataGridView responseList;
-    private BindingSource responseBindingSource;
     private Panel panel1;
     private Label label14;
     private TextBox responseBox;
@@ -1159,8 +1159,6 @@
     private RichTextBox logsBox;
     private Panel panel2;
     private Panel panel3;
-    private DataGridViewTextBoxColumn commandDataGridViewTextBoxColumn;
-    private DataGridViewTextBoxColumn responseDataGridViewTextBoxColumn;
     private TabPage tabPage1;
     private PictureBox pictureBox1;
     private Panel panel4;
@@ -1178,5 +1176,8 @@
     private Label label23;
     private LinkLabel linkLabel4;
     private PictureBox pictureBox2;
+    private DataGridViewTextBoxColumn commandDataGridViewTextBoxColumn;
+    private DataGridViewTextBoxColumn responseDataGridViewTextBoxColumn;
+    private BindingSource commandResponseBindingSource;
   }
 }
